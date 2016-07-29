@@ -1,13 +1,14 @@
 package genericBox;
 
-public class Box <T> {
+public class Box <T extends Comparable> implements Comparable<T> {
+
     private T box;
 
     public Box(T box) {
         this.setBox(box);
     }
 
-    private T getBox() {
+    public T getBox() {
         return box;
     }
 
@@ -20,5 +21,11 @@ public class Box <T> {
         StringBuilder sb = new StringBuilder();
         sb.append(box.getClass().getName()).append(String.format(": %s",box));
         return sb.toString();
+    }
+
+
+    @Override
+    public int compareTo(T o) {
+        return this.compareTo(o);
     }
 }
