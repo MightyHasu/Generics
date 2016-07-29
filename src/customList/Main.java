@@ -1,22 +1,22 @@
 package customList;
 
+import customList.models.Interpreter;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
 
-    public static void main(String[] args) {
-        Container<Integer> list = new ContainerIml<>(Integer.TYPE);
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        list.add(4);
-        list.add(6);
-        list.add(7);
-        list.add(3);
-        list.add(9);
-        System.out.println(list.toString());
-        list.remove(0);
-        System.out.println(list.toString());
-        System.out.println(list.contains(7));
-        System.out.println(list.countGreaterThan(6));
-        System.out.println(list.getMax());
-        System.out.println(list.getMin());
+        String input = "";
+        Interpreter interpret = new Interpreter();
+
+        while (!(input=reader.readLine()).equals("END")) {
+            interpret.implementCommand(input);
+        }
     }
 
 }

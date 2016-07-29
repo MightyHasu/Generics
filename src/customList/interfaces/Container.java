@@ -1,4 +1,4 @@
-package customList;
+package customList.interfaces;
 
 public interface Container<T extends Comparable<T>> {
 

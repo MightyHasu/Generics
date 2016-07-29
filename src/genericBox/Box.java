@@ -26,6 +26,6 @@ public class Box <T extends Comparable> implements Comparable<T> {
 
     @Override
     public int compareTo(T o) {
-        return this.compareTo(o);
+        return this.box.compareTo((Box)o);
     }
 }

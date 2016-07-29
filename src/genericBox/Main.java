@@ -21,7 +21,7 @@ public class Main {
             }
 
             Box boxToCompare = new Box(reader.readLine());
-            System.out.println(countGreater(Box.class, boxes, boxToCompare));
+            System.out.println(countGreater(boxes, boxToCompare));
 
             //String[] swapPositions  = reader.readLine().split("\\s+");
             //int firstIndex = Integer.valueOf(swapPositions[0]);
@@ -44,7 +44,7 @@ public class Main {
         type.remove(type.size() - 1);
     }
 
-    public static <T extends Comparable<T>> int countGreater(Class<T> classType, List<T> list, T element) {
+    public static <T extends Comparable<T>> int countGreater(List<T> list, T element) {
         int counter= 0;
         for (int i = 0; i < list.size(); i++) {
             if (element.compareTo((T)list.get(i)) < 0) {
